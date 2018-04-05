@@ -1,9 +1,19 @@
-// Write your code here.
-const today = new Date();
-const dayOfWeek = ["Neděle", "Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota"];
-const hours = today.getHours();
-const minutes = today.getMinutes();
-const seconds = today.getSeconds();
+// Write a JavaScript program to get the current date.
+// Expected Output : 
+// mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
 
-console.log(`Dnes je : ${dayOfWeek[today.getDay()]}.
-Aktuální čas je : ${hours} : ${minutes} : ${seconds}`);
+const today = new Date();
+const year = today.getFullYear();
+let month = today.getMonth()+1;
+if (month<10) {
+  month = "0"+month;
+}
+let date = today.getDate();
+if (date<10) {
+  date = "0"+date;
+}
+
+console.log(`${month}-${date}-${year}`);
+console.log(`${month}/${date}/${year}`);
+console.log(`${date}-${month}-${year}`);
+console.log(`${date}/${month}/${year}`);
